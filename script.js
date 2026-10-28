@@ -5,6 +5,8 @@ const profile = {
   about: "I’m studying for a Bachelor of Computer Applications at Midnapore College and learning by making. I’m interested in building clear, useful web experiences and exploring AI/ML through projects like Prism, a local-first retrieval assistant.",
   location: "Rampurhat, India",
   focus: "Web development · AI/ML",
+  email: "subhamsidhanta@gmail.com",
+  instagram: "https://www.instagram.com/subham__sidhanta_/",
   github: "https://github.com/Subhamsidhanta",
   linkedin: "https://www.linkedin.com/in/subham-sidhanta",
   projects: [
@@ -85,10 +87,10 @@ document.querySelectorAll("[data-profile]").forEach((element) => {
   element.textContent = profile[key];
 });
 
-for (const [key, label] of [["github", "GitHub"], ["linkedin", "LinkedIn"]]) {
+for (const [key, label] of [["email", "Email"], ["instagram", "Instagram"], ["github", "GitHub"], ["linkedin", "LinkedIn"]]) {
   document.querySelectorAll(`[data-link="${key}"]`).forEach((link) => {
-    link.href = profile[key];
-    link.setAttribute("aria-label", `${label} profile`);
+    link.href = key === "email" ? `mailto:${profile.email}` : profile[key];
+    link.setAttribute("aria-label", key === "email" ? `Email ${profile.shortName}` : `${label} profile`);
   });
 }
 
