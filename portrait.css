@@ -1,0 +1,144 @@
+.hero-portrait {
+  margin: 0;
+  overflow: visible;
+  isolation: isolate;
+}
+
+.hero-portrait .art-orbit {
+  border-color: #8b8d8a66;
+}
+
+.hero-portrait .orbit-one {
+  width: 430px;
+  height: 220px;
+}
+
+.hero-portrait .orbit-two {
+  width: 350px;
+  height: 330px;
+}
+
+.hero-portrait .orbit-three {
+  width: 245px;
+  height: 420px;
+}
+
+.portrait-photo {
+  position: relative;
+  z-index: 1;
+  width: min(70%, 320px);
+  height: 88%;
+  overflow: hidden;
+  border: 1px solid #f5f0de66;
+  border-radius: 47% 47% 5px 5px;
+  box-shadow: 0 28px 70px #0007;
+  transform: translateY(4px);
+}
+
+.portrait-photo::after {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: linear-gradient(180deg, transparent 60%, #10111366 100%);
+  pointer-events: none;
+}
+
+.portrait-photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 31%;
+}
+
+.hero-portrait .art-label,
+.hero-portrait .art-star,
+.portrait-tag {
+  z-index: 2;
+}
+
+.hero-portrait .label-top {
+  top: 43px;
+  left: 0;
+}
+
+.hero-portrait .label-bottom {
+  right: 0;
+  bottom: 45px;
+}
+
+.portrait-tag {
+  position: absolute;
+  bottom: 13px;
+  left: 50%;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 9px 12px;
+  border: 1px solid #ffffff30;
+  border-radius: 99px;
+  background: #151617d9;
+  color: #f2f0e9;
+  font: 8px var(--mono);
+  letter-spacing: .09em;
+  white-space: nowrap;
+  transform: translateX(-50%);
+}
+
+.portrait-tag span {
+  color: var(--lime);
+}
+
+@media (max-width: 760px) {
+  .hero-portrait .portrait-photo {
+    width: min(66%, 270px);
+    height: 87%;
+  }
+
+  .hero-portrait .label-top {
+    top: 24px;
+  }
+
+  .hero-portrait .label-bottom {
+    bottom: 31px;
+  }
+
+  .portrait-tag {
+    bottom: 2px;
+  }
+}
+
+.project-card[hidden],
+.show-more-projects[hidden] {
+  display: none;
+}
+
+.show-more-projects {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  width: max-content;
+  margin: 34px auto 0;
+  padding: 12px 17px;
+  border: 1px solid #505154;
+  border-radius: 99px;
+  background: transparent;
+  color: var(--ink);
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: border-color .2s, color .2s, transform .2s;
+}
+
+.show-more-projects:hover {
+  border-color: var(--lime);
+  transform: translateY(-2px);
+}
+
+.show-more-icon {
+  color: var(--lime);
+  font-size: 17px;
+  font-weight: 400;
+  line-height: 1;
+}
